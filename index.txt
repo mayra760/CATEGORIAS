@@ -1,0 +1,22 @@
+<div class="color-selector">
+    <button class="btn btn-secondary" onclick="filtrarPorColor('blanco')">blanco</button>
+    <button class="btn btn-secondary" onclick="filtrarPorColor('verde')">Verde</button>
+    <button class="btn btn-secondary" onclick="filtrarPorColor('azul')">Azul</button>
+    <button class="btn btn-secondary" onclick="filtrarPorColor('amarillo')">Amarillo</button>
+    <button class="btn btn-secondary" onclick="filtrarPorColor('todos')">Todos</button>
+</div>
+
+
+<script>
+function filtrarPorColor(color) {
+    const categorias = document.querySelectorAll('.categoria');
+    categorias.forEach(categoria => {
+        const productoColor = categoria.getAttribute('data-color'); // Asegúrate de que cada categoría tenga este atributo
+        if (color === 'todos' || productoColor === color) {
+            categoria.style.display = 'block'; // Muestra el producto
+        } else {
+            categoria.style.display = 'none'; // Oculta el producto
+        }
+    });
+}
+</script>
